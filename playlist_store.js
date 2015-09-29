@@ -19,7 +19,7 @@ function getSavedSongs() {
 }
 function getStoreArray(key) {
     var playlistArray = localStorage.getItem(key);
-    if (playlistArray == null || playlistArray == "”) {
+    if (playlistArray == null || playlistArray == "") {
         playlistArray = new Array();
     }
     else {
