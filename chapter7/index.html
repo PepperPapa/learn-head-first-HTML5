@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>TweetShirt</title>
+    <meta charset="utf-8">
+    <style>
+        canvas { 
+            border: 1px solid black; 
+        }
+    </style>
+    <script src="tweetshirt.js"></script>
+</head>
+<body>
+    <h1>TweetShirt</h1>
+    <canvas width="600" height="200" id="tshirtCanvas"> 
+        <p>Please upgrade your browser to use TweetShirt!</p>
+    </canvas>
+    <form>
+    <p>
+        <label for="backgroundColor">Selct background color:</label>
+        <select id="backgroundColor">
+            <option value="White" selected="selected">White</optin>
+            <option value="black">Black</optin>
+        </select>
+    </p>
+    <p>
+        <label for="shape">Circles or suqares?</label>
+        <select id="shape">
+            <option value="none" selected="selected">Neither</optin>
+            <option value="circles">Circles</optin>
+            <option value="squares">Squares</optin>
+        </select>
+    </p>
+    <p>
+        <label for="foregroundColor">Select text color:</label>
+        <select id="foregroundColor">
+            <option value="black" selected="selected">Black</optin>
+            <option value="White">White</optin>
+        </select>
+    </p>
+    <p>
+        <label for="tweets">Pick a tweet:</label>
+        <select id="tweets">
+        </select>
+    </p>
+    <p>
+        <input type="button", id="previewButton", value="Preview">
+    </p>
+    </form>
+    <script src="http://api.twitter.com/1/statuses/user_timeline/wickedsmartly.json?callback=updateTweets"></script>
+</body>
+</html>
