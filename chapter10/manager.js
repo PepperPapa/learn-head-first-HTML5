@@ -1,4 +1,5 @@
 window.onload = function() {
+  w2 = window.open("http://www.baidu.com")
   var worker = new Worker("worker.js");
   worker.postMessage("ping");
 

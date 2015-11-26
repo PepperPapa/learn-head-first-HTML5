@@ -13,8 +13,27 @@ function init() {
     resizeToWindow();
   }
   canvas.onclick = function(event) {
-    //书中代码有误handleClick(event.clientX, event.clientY);
+    handleClick(event.clientX, event.clientY);
+    //handleClick(event.x, event.y); clientX、clientY和x、y是等价关系
+    /*
+    Hi:
+    I found if i used below code, I clicked the canvas and I got only black background:
+
+    path: mandel.js -> function init:
+
+    canvas.onclick = function(event) {
+    handleClick(event.clientX, event.clientY);
+    };
+    after I updated the upper code as below, I got the correct response.
+    canvas.onclick = function(event) {
     handleClick(event.x, event.y);
+    };
+I think it's a bug here, please check, TKS
+    Which browser are you using?
+    clientX and x are aliased, so they should do the exact same thing, unless
+    you're using a browser that doesn't implement them correctly.
+    See: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
+    */
   };
 
 
