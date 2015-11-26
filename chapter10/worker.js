@@ -7,7 +7,7 @@ function pingPong(event) {
     }
 }*/
 
-importScripts("mandellib.js");
+importScripts("workerlib.js");
 onmessage = function (task) {
   var workerResult = computeRow(task.data);
   postMessage(workerResult);

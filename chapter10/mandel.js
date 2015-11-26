@@ -1,14 +1,21 @@
 var numberOfWorkers = 8;
 var workers = [];
 
+var nextRow = 0;
+var generation = 0;
+
+
 window.onload = init;
 
 function init() {
   setupGraphics();
+  window.onresize = function() {
+    resizeToWindow();
+  }
   canvas.onclick = function(event) {
-    handleClick(event.clientX, event.clienY);
+    //书中代码有误handleClick(event.clientX, event.clientY);
+    handleClick(event.x, event.y);
   };
-  resizeToWindow();
 
 
   for (var i = 0; i < numberOfWorkers; i++) {
@@ -22,9 +29,6 @@ function init() {
   }
   startWorkers();
 }
-
-var nextRow = 0;
-var generation = 0;
 
 function startWorkers() {
   generation++;
